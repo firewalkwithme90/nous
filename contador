@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tempo em Redes Sociais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="tempo">Tempo gasto em redes sociais (em minutos): </label>
+        <input type="number" id="tempo" placeholder="Digite o tempo em minutos">
+        <button onclick="calcularDias()">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularDias() {
+            var tempoEmMinutos = parseInt(document.getElementById("tempo").value);
+            var minutosEmUmDia = 24 * 60; // 24 horas * 60 minutos
+
+            var diasDoMes = tempoEmMinutos / minutosEmUmDia * 30;
+
+            document.getElementById("resultado").innerText = "Você passa aproximadamente " + diasDoMes.toFixed(2) + " dias por mês em redes sociais.";
+        }
+    </script>
+</body>
+
+</html>
+
